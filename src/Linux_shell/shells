@@ -1,0 +1,9 @@
+1.pkill命令可以按照进程名杀死进程
+  pkill name
+  pgrep -l name
+  pkill name
+2.ps显示当前系统运行的进程状态，查看正在运行的进程和运行的状态，进程是否结束，僵死，占用过多资源等
+    ps -aux
+    ps -ef | head
+3.runlevel 查看当前系统运行级别 (单用户，多用户，停机。。)
+
