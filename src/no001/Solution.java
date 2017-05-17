@@ -9,9 +9,9 @@ import java.util.concurrent.RecursiveTask;
  * Created by twb on 2017/5/14.
  */
 public class Solution {
-    //public int findDuplicate(int[] nums) {
-
-   // }
+    public int characterReplacement(String s, int k) {
+        return 0;
+    }
 
 
 
