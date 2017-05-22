@@ -6,7 +6,7 @@ package no361;
 
 /**
  * time:O(mn)
- * 
+ *
  */
 public class Solution {
     public int maxKilledEnemies(char[][] grid) {
