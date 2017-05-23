@@ -27,10 +27,32 @@ public class Solution_Ugly_Number {
         }
         return res[n-1];
     }
+    public int nthSuperUglyNumber(int n, int[] primes) {
+        int[] res = new int[n];
+        int len = primes.length;
+        int dp[] = new int[len];
+        res[0] = 1;
+        int curr = 1;
+        while(curr<n){
+            int min = Integer.MAX_VALUE;
+            for(int i = 0;i < len;i++){
+                min = Math.min(min, res[dp[i]] * primes[i]);
+            }
+            for(int i = 0; i < len; i++){
+                if(min == res[dp[i]] * primes[i])
+                    dp[i]++;
+            }
+            res[curr] = min;
+            curr++;
+        }
+        return res[n-1];
+    }
+
 
     public static void main(String[] args) {
         Solution_Ugly_Number solution = new Solution_Ugly_Number();
         System.out.println(solution.nthUglyNumber(3));
+        System.out.println(solution.nthSuperUglyNumber(12,new int[]{2, 7, 13, 19}));
     }
 }
 
