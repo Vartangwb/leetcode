@@ -6,7 +6,7 @@ package no162;
 public class Solution {
 
     public int findPeakElement(int[] nums) {
-        int len = nums.length;
+          int len = nums.length;
 
         int left = 0;
         int right = nums.length - 1;
