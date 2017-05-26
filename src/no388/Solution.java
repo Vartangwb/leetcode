@@ -29,7 +29,9 @@ public class Solution {
         return res;
         }
 
-    public int getLen(String in){
+    public int getLen(String in)
+
+    {
         return in.length() - in.replaceAll("\t","").length();
     }
     }
