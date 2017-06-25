@@ -1,11 +1,12 @@
-package Round1.no314;
+package HM;
 
 import java.util.*;
 
 /**
- * Created by twb on 2017/5/23.
+ * Created by twb on 2017/6/19.
  */
-public class Solution {
+public class Main314 {
+
 
     public static class TreeNode {
 
@@ -32,6 +33,8 @@ public class Solution {
         Map<Integer, List<Integer>> hm = new HashMap<>();
         Queue<TreeNodeIndex> queue = new LinkedList<>();
         queue.add(new TreeNodeIndex(root, 0));
+        int max = 0;
+        int min = 0;
         while(queue.isEmpty() == false){
 
             int size = queue.size();
@@ -48,26 +51,27 @@ public class Solution {
                 }
 
                 if(tmp.root.left!=null){
-          //          System.out.println("+"+tmp.root.left.val);
+                    //          System.out.println("+"+tmp.root.left.val);
                     queue.add(new TreeNodeIndex(tmp.root.left, tmp.val - 1));
+                    min = Math.min(min, tmp.val-1);
                 }
                 if(tmp.root.right!=null){
                     queue.add(new TreeNodeIndex(tmp.root.right, tmp.val + 1));
+                    max = Math.max(max, tmp.val+1);
                 }
             }
         }
 
-        for(int kk:hm.keySet()){
-            for(int jj:hm.get(kk)){
-                System.out.print(jj+" ");
-            }
-            System.out.println(" ");
+        for(int kk = min;kk<=max;kk++){
+            System.out.print(hm.get(kk)+" ");
+            res.add(hm.get(kk));
         }
-        return null;
+        System.out.println(res);
+        return res;
     }
 
     public static void main(String[] args) {
-        Solution solution = new Solution();
+        Main314 solution = new Main314();
 
         TreeNode root = new TreeNode(1);
         root.left = new TreeNode(2);
@@ -76,5 +80,7 @@ public class Solution {
         root.right.left = new TreeNode(5);
         solution.verticalOrder(root);
     }
+
+
 
 }
