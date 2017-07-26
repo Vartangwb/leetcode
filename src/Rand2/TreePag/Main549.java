@@ -1,20 +1,13 @@
-package Round1.no549;
+package TreePag;
+
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
 
 /**
- * Created by twb on 2017/5/23.
+ * Created by twb on 2017/7/8.
  */
-public class Solution {
-
-
-    public static class TreeNode{
-        TreeNode left;
-        TreeNode right;
-        int val;
-
-        public TreeNode(int val) {
-            this.val = val;
-        }
-    }
+public class Main549 {
     int longestConsecutive(TreeNode root){
         if(root == null)
             return 0;
@@ -62,16 +55,11 @@ public class Solution {
         return res;//Math.max(Math.max(res, longestConsecutiveII(root.left)), longestConsecutiveII(root.right));
 
     }
-
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        TreeNode root = new TreeNode(1);
-        root.left = new TreeNode(2);
-        root.right = new TreeNode(0);
-        root.left.right = new TreeNode(3);
-        root.left.right.right = new TreeNode(4);
-        System.out.println(solution.longestConsecutive(root));
-
-        System.out.println(solution.longestConsecutiveII(root));
+        TreeNode root = new TreeNode(0);
+        root.left = new TreeNode(1);
+        root.right = new TreeNode(2);
+        Main549 main545 = new Main549();
+        System.out.println(main545.longestConsecutive(root));
     }
 }
